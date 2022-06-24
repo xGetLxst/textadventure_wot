@@ -5,15 +5,20 @@ import java.io.InputStreamReader;
 public class Wow {
 
 
-    private MapElement[][] createMap() {
+    private static MapElement[][] createMap() {
 
-       MapElement[][] map = new MapElement[6][6]; 
+       MapElement[][] map = new MapElement[8][8]; 
         map[0][0] = new Field("Dein Zuhause.");
 
-        for(int n = 1; n < 6; n++) {
-            map[0][n] =  new Field ("Hier ist das Meer.");
-            map[n][5] = new Field("Hier ist das Meer.");
+        for(int n = 0; n < 8; n++) {
+          for(int m = 0; m < 8; m++) {
+            map[m][n] = new Field ("Hier ist Nichts.");
+          } 
+        }
 
+        for(int n = 0; n < 8; n++) {
+            map[7][n] =  new Field ("Hier ist das Meer.");
+            map[n][7] = new Field("Hier ist das Meer.");
         }
 
         map[1][1] = new Field("Hier ist der Waldweg.");
@@ -64,7 +69,7 @@ public class Wow {
         System.out.println("Person: " +  bobby.getName());
         System.out.println("Person: " + boeserKobold.getName());
 
-        MapElement[][] map = createMap()
+        MapElement[][] map = createMap();
                
         while ((befehl = br.readLine()) != null) {
             switch (befehl.toLowerCase()) {
