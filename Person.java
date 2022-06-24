@@ -23,4 +23,7 @@ public class Person implements MapElement {
         return this.name + ":" + this.gender;
     }
     
+        public String getSymbol() {
+          return "P";
+        }
 }

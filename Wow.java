@@ -4,6 +4,15 @@ import java.io.InputStreamReader;
 
 public class Wow {
 
+    private static void printMap(MapElement[][] map) {
+        for(int n = 7; n >=0 ; n--) {
+          for(int m = 0; m < 8; m++) {
+            System.out.print(map[m][n].getSymbol()); 
+          } 
+            System.out.println(); 
+        }
+    }
+
 
     private static MapElement[][] createMap() {
 
@@ -46,10 +55,14 @@ public class Wow {
         map[5][3] = new Field("Hier ist das Meer.");
         map[5][4] = new Field("Hier ist das Meer.");
 
+
+        printMap(map);
       return map;
     }
   
     public static void main(String []args) throws IOException {
+        MapElement[][] map = createMap();
+
         System.out.println("Hallo" + ", willkommen in der World of Warcraft. Du befindest dich auf der Insel Idris.");
         System.out.println("Verwende die Tasten 'W', 'A', 'S' und 'D' um dich zu bewegen, wenn du ein Blick in dein Inventar werfen möchtest, verwende hierzu 'I'.");
         System.out.println("Mit 'Q' verlässt du das Spiel.");
@@ -69,8 +82,12 @@ public class Wow {
         System.out.println("Person: " +  bobby.getName());
         System.out.println("Person: " + boeserKobold.getName());
 
-        MapElement[][] map = createMap();
-               
+        map[0][0] = DuSpieler;
+        
+        printMap(map);
+
+
+
         while ((befehl = br.readLine()) != null) {
             switch (befehl.toLowerCase()) {
             case "w":

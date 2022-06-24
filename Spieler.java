@@ -22,4 +22,7 @@ public class Spieler implements MapElement {
     public String getDisplayName() {
         return this.name + ":" + this.strength;
     }
+        public String getSymbol() {
+          return "P";
+        }
 }
