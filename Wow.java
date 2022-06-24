@@ -3,36 +3,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Wow {
-    public static void main(String []args) throws IOException {
-        System.out.println("Hallo" + ", willkommen in der World of Warcraft. Du befindest dich auf der Insel Idris.");
-        System.out.println("Verwende die Tasten 'W', 'A', 'S' und 'D' um dich zu bewegen, wenn du ein Blick in dein Inventar werfen möchtest, verwende hierzu 'I'.");
-        System.out.println("Mit 'Q' verlässt du das Spiel.");
-        System.out.println("Starte deine Reise mit 'T'");
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String befehl;
-
-        int x = 0;
-        int y = 0;
 
 
-        Spieler DuSpieler = new Spieler(0, "Du", 14, 6);
-        Person bobby = new Person(1, "Bobby", 153, "m");
-        Kobold boeserKobold = new Kobold(2, "Böser Kobold", 3, 4);
-       
-        
-        System.out.println("Person: " + DuSpieler.getName());
-        System.out.println("Person: " +  bobby.getName());
-        System.out.println("Person: " + boeserKobold.getName());
+    private MapElement[][] createMap() {
 
-        
-
-        MapElement[][] map2 = new MapElement[6][6];
-
-        map2[0][0] = new Field("Zu Hause");
-        map2[1][1] = bobby;
-
-        MapElement[][] map = new MapElement[6][6]; 
-
+       MapElement[][] map = new MapElement[6][6]; 
         map[0][0] = new Field("Dein Zuhause.");
 
         for(int n = 1; n < 6; n++) {
@@ -40,8 +15,6 @@ public class Wow {
             map[n][5] = new Field("Hier ist das Meer.");
 
         }
-
-
 
         map[1][1] = new Field("Hier ist der Waldweg.");
         map[1][2] = new Field("Hier ist der Wald.");
@@ -67,7 +40,32 @@ public class Wow {
         map[5][2] = new Field("Hier ist das Meer.");
         map[5][3] = new Field("Hier ist das Meer.");
         map[5][4] = new Field("Hier ist das Meer.");
+
+      return map;
+    }
+  
+    public static void main(String []args) throws IOException {
+        System.out.println("Hallo" + ", willkommen in der World of Warcraft. Du befindest dich auf der Insel Idris.");
+        System.out.println("Verwende die Tasten 'W', 'A', 'S' und 'D' um dich zu bewegen, wenn du ein Blick in dein Inventar werfen möchtest, verwende hierzu 'I'.");
+        System.out.println("Mit 'Q' verlässt du das Spiel.");
+        System.out.println("Starte deine Reise mit 'T'");
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String befehl;
+
+        int x = 0;
+        int y = 0;
+
+        Spieler DuSpieler = new Spieler(0, "Du", 14, 6);
+        Person bobby = new Person(1, "Bobby", 153, "m");
+        Kobold boeserKobold = new Kobold(2, "Böser Kobold", 3, 4);
+       
         
+        System.out.println("Person: " + DuSpieler.getName());
+        System.out.println("Person: " +  bobby.getName());
+        System.out.println("Person: " + boeserKobold.getName());
+
+        MapElement[][] map = createMap()
+               
         while ((befehl = br.readLine()) != null) {
             switch (befehl.toLowerCase()) {
             case "w":
