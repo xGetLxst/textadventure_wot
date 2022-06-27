@@ -55,8 +55,6 @@ public class Wow {
         map[5][3] = new Field("Hier ist das Meer.");
         map[5][4] = new Field("Hier ist das Meer.");
 
-
-        printMap(map);
       return map;
     }
   
