@@ -76,20 +76,19 @@ public class Wow {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String befehl;
 
-        int x = 0;
-        int y = 0;
-
+   
         Spieler DuSpieler = new Spieler(0, "Du", 14, 6);
         Person bobby = new Person(1, "Bobby", 153, "m");
         Kobold boeserKobold = new Kobold(2, "Böser Kobold", 3, 4);
        
-        
-
         map[0][0] = DuSpieler;
+        map[6][1] = boeserKobold;
+        map[2][4] = bobby;
         
         printMap(map);
 
-
+        int x = 0;
+        int y = 0;
 
         while ((befehl = br.readLine()) != null) {
             switch (befehl.toLowerCase()) {

@@ -24,6 +24,6 @@ public class Person implements MapElement {
     }
     
         public String getSymbol() {
-          return "P";
+          return "B";
         }
 }
