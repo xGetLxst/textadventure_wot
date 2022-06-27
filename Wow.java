@@ -13,7 +13,6 @@ public class Wow {
         }
     }
 
-
     private static MapElement[][] createMap() {
 
        MapElement[][] map = new MapElement[8][8]; 
@@ -57,14 +56,23 @@ public class Wow {
 
       return map;
     }
+
+
+    private static void Spielbeginn() {
+
+      System.out.println("Hallo" + ", willkommen in der World of Warcraft. Du befindest dich auf der Insel Idris.");
+        System.out.println("Verwende die Tasten 'W', 'A', 'S' und 'D' um dich zu bewegen, wenn du ein Blick in dein Inventar werfen möchtest, verwende hierzu 'I'.");
+        System.out.println("Mit 'Q' verlässt du das Spiel.");
+        System.out.println("Starte deine Reise mit 'T'");
+        System.out.println();
+        
+    }
   
     public static void main(String []args) throws IOException {
         MapElement[][] map = createMap();
 
-        System.out.println("Hallo" + ", willkommen in der World of Warcraft. Du befindest dich auf der Insel Idris.");
-        System.out.println("Verwende die Tasten 'W', 'A', 'S' und 'D' um dich zu bewegen, wenn du ein Blick in dein Inventar werfen möchtest, verwende hierzu 'I'.");
-        System.out.println("Mit 'Q' verlässt du das Spiel.");
-        System.out.println("Starte deine Reise mit 'T'");
+        Spielbeginn();
+
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         String befehl;
 
@@ -76,9 +84,6 @@ public class Wow {
         Kobold boeserKobold = new Kobold(2, "Böser Kobold", 3, 4);
        
         
-        System.out.println("Person: " + DuSpieler.getName());
-        System.out.println("Person: " +  bobby.getName());
-        System.out.println("Person: " + boeserKobold.getName());
 
         map[0][0] = DuSpieler;
         
