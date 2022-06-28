@@ -5,9 +5,9 @@ import java.io.InputStreamReader;
 public class Wow {
 
   private static void printMap(MapElement[][] map) {
-    for (int n = 7; n >= 0; n--) {
-      for (int m = 0; m < 8; m++) {
-        System.out.print(map[m][n].getSymbol());
+    for (int y = 7; y >= 0; y--) {
+      for (int x = 0; x < 8; x++) {
+        System.out.print(map[x][y].getSymbol());
       }
       System.out.println();
     }
@@ -15,44 +15,98 @@ public class Wow {
 
   private static MapElement[][] createMap() {
 
-    MapElement[][] map = new MapElement[8][8];
+    MapElement[][] map = new MapElement[8][9];
     map[0][0] = new Field("Dein Zuhause.");
 
-    for (int n = 0; n < 8; n++) {
-      for (int m = 0; m < 8; m++) {
-        map[m][n] = new Field("Hier ist Nichts.");
+    for (int y = 0; y < 9; y++) {
+      for (int x = 0; x < 8; x++) {
+        map[x][y] = new Field("Hier ist Nichts.");
       }
     }
 
     for (int n = 0; n < 8; n++) {
       map[7][n] = new Field("Hier ist das Meer.");
-      map[n][7] = new Field("Hier ist das Meer.");
+      map[n][8] = new Field("Hier ist das Meer.");
     }
 
-    map[1][1] = new Field("Hier ist der Waldweg.");
-    map[1][2] = new Field("Hier ist der Wald.");
-    map[1][3] = new Field("Hier ist der Wald.");
-    map[1][4] = new Field("Hier ist der Wald.");
+    map[0][1] = new Meer();
+    map[0][2] = new Meer();
+    map[0][3] = new Meer();
+    map[0][4] = new Meer();
+    map[0][5] = new Meer();
+    map[0][6] = new Meer();
+    map[0][7] = new Meer();
+    map[0][8] = new Meer();
 
+    map[1][0] = new Field("Hier ist der Waldweg.");
+    map[1][1] = new Field("Hier ist der Waldweg.");
+    map[1][2] = new Wald();
+    map[1][3] = new Wald();
+    map[1][4] = new Wald();
+    map[1][5] = new Wald();
+    map[1][6] = new Wald();
+    map[1][7] = new Wald();
+    map[1][8] = new Wald();
+
+    map[2][0] = new Meer();
     map[2][1] = new Field("Hier ist der Waldweg.");
     map[2][2] = new Field("Hier ist der Waldweg.");
     map[2][3] = new Field("Der Marktplatz");
-    map[2][4] = new Field("Hier ist der Wald.");
+    map[2][4] = new Field("Hier ist der Markt.");
+    map[2][5] = new Wald();
+    map[2][6] = new Wald();
+    map[2][7] = new Wald();
+    map[2][8] = new Wald();
 
-    map[3][1] = new Field("Hier ist der Waldweg.");
-    map[3][2] = new Field("Hier ist der Waldweg.");
-    map[3][3] = new Field("Hier ist der Waldweg.");
-    map[3][4] = new Field("Hier ist der Wald.");
+    map[3][0] = new Meer();
+    map[3][1] = new Wald();
+    map[3][2] = new Wald();
+    map[3][3] = new Wald();
+    map[3][4] = new Field("Hier ist der Waldweg.");
+    map[3][5] = new Wald();
+    map[3][6] = new Wald();
+    map[3][7] = new Wald();
+    map[3][8] = new Wald();
 
-    map[4][1] = new Field("Missionsgebiet: Koboldhöhle");
-    map[4][2] = new Field("Hier ist der Wald.");
-    map[4][3] = new Field("Hier ist der Wald.");
-    map[4][4] = new Field("Hier ist der Wald.");
+    map[4][0] = new Meer();
+    map[4][1] = new Wald();
+    map[4][2] = new Wald();
+    map[4][3] = new Wald();
+    map[4][4] = new Field("Hier ist der Waldweg.");
+    map[4][5] = new Wald();
+    map[4][6] = new Wald();
+    map[4][7] = new Wald();
+    map[4][8] = new Wald();
 
-    map[5][1] = new Field("Hier ist das Meer.");
-    map[5][2] = new Field("Hier ist das Meer.");
-    map[5][3] = new Field("Hier ist das Meer.");
-    map[5][4] = new Field("Hier ist das Meer.");
+    map[5][0] = new Meer();
+    map[5][1] = new Field("Missionsgebiet: Die Koboldshöhle.");
+    map[5][2] = new Field("Missionsgebiet: Die Koboldshöhle.");
+    map[5][3] = new Field("Hier ist der Waldweg.");
+    map[5][4] = new Field("Hier ist der Waldweg.");
+    map[5][5] = new Wald();
+    map[5][6] = new Ruinen();
+    map[5][7] = new Ruinen();
+    map[5][8] = new Meer();
+
+    map[6][0] = new Meer();
+    map[6][1] = new Field("Missionsgebiet: Die Koboldshöhle.");
+    map[6][2] = new Field("Missionsgebiet: Die Koboldshöhle.");
+    map[6][3] = new Wald();
+    map[6][4] = new Wald();
+    map[6][5] = new Wald();
+    map[6][6] = new Ruinen();
+    map[6][7] = new Ruinen();
+    map[6][8] = new Meer();
+
+    map[7][0] = new Meer();
+    map[7][1] = new Meer();
+    map[7][2] = new Meer();
+    map[7][3] = new Meer();
+    map[7][4] = new Meer(); 
+    map[7][5] = new Meer();
+    map[7][6] = new Meer();
+    map[7][7] = new Meer();
+    map[7][8] = new Meer();
 
     return map;
   }
