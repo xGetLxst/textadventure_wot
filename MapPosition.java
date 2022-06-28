@@ -1,24 +1,37 @@
 public class MapPosition {
-    int x;
-    int y;
-    Person character;
 
-    MapElement[] elements;
+    private Spieler spieler;
+    private MapElement element;
 
-
-    public int getX() {
-        return x;
+    public MapPosition(Spieler spieler) {
+        this.spieler = spieler;
     }
 
-    public int getY() {
-        return y;
+    public MapPosition(MapElement element) {
+        this.element = element;
     }
 
-    public void setCharacter (Person character) {
-        this.character = character;
+    public MapPosition(Spieler spieler, MapElement element) {
+        this.spieler = spieler;
+        this.element = element;
     }
 
-    public Person getCharacter () {
-        return character;
+    public Spieler getSpieler() {
+        return spieler;
     }
+
+    public void setSpieler(Spieler spieler) {
+        this.spieler = spieler;
+    }
+
+    public MapElement getElement() {
+        return element;
+    }
+
+    public void setElement(MapElement element) {
+        this.element = element;
+    }
+
+    
+    
 }
