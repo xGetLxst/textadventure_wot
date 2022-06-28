@@ -3,7 +3,7 @@ public class Wald implements MapElement {
     return "Hier ist der Wald.";
 }
     public String getSymbol() {
-        return "§";
+        return "$";
       }
 
 
