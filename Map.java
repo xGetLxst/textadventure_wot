@@ -2,13 +2,37 @@ public class Map {
 
   private MapPosition[][] positions;
 
+
+  private int maxX;
+  private int maxY;
+
+
+  public Map(int maxX, int maxY) {
+    this.maxX = maxX;
+    this.maxY = maxY;
+    this.positions = createMapSmall();
+  }
+
+  public int getmaxX() {
+    return maxX;
+}
+
+public void setmaxX(int maxX) {
+}
+
+public int getmaxY() {
+  return maxY;
+}
+
+public void setmaxY(int maxY) {
+}
+
+
   public void placeElement(int x, int y, MapElement mapElement) {
     this.positions[x][y].setElement(mapElement);
   }
 
-  public Map() {
-    this.positions = createMapSmall();
-  }
+
 
   public MapPosition[][] getPositions() {
     return positions;

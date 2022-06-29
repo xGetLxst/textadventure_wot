@@ -29,7 +29,7 @@ public class Wow {
   }
 
   public static void main(String[] args) throws IOException {
-    Map map = new Map();
+    Map map = new Map(3, 3);
 
     Spielbeginn();
 
@@ -52,7 +52,12 @@ public class Wow {
 
     while ((befehl = br.readLine()) != null) {
       switch (befehl.toLowerCase()) {
-        case "w":
+        
+      case "w":
+          if(y == map.getmaxY() -1){
+            System.out.println("Hier ist der Rand der Insel.");
+            break;
+          }
           y++;
           duSpieler.MoveUp();
           printMap(map);
@@ -61,6 +66,10 @@ public class Wow {
           System.out.println("Feld: " + map.getPositions()[x][y].getElement().getDisplayName());
           break;
         case "d":
+        if(x == map.getmaxX() -1){
+          System.out.println("Hier ist der Rand der Insel.");
+          break;
+        }
           x++;
           duSpieler.MoveRight();
           printMap(map);
@@ -69,6 +78,10 @@ public class Wow {
           System.out.println("Feld: " + map.getPositions()[x][y].getElement().getDisplayName());
           break;
         case "s":
+        if(y == 0){
+          System.out.println("Hier ist der Rand der Insel.");
+          break;
+        }
           y--;
           duSpieler.MoveDown();
           printMap(map);
@@ -77,6 +90,10 @@ public class Wow {
           System.out.println("Feld: " + map.getPositions()[x][y].getElement().getDisplayName());
           break;
         case "a":
+        if(x == 0){
+          System.out.println("Hier ist der Rand der Insel.");
+          break;
+        }
           x--;
           duSpieler.MoveLeft();
           printMap(map);
