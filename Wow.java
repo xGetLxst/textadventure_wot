@@ -7,10 +7,11 @@ public class Wow {
   private static Spieler duSpieler;
 
   private static void printMap(Map map) {
-    System.out.println("--------------------------");
+    System.out.println("--------- KARTE ----------");
+    System.out.println("");
 
-    for (int y = 2; y >= 0; y--) {
-      for (int x = 0; x <= 2; x++) {
+    for (int y = 8; y >= 0; y--) {
+      for (int x = 0; x <= 8; x++) {
         
         if(duSpieler.getX() == x && duSpieler.getY() == y) {
           System.out.print(duSpieler.getSymbol());
@@ -20,6 +21,7 @@ public class Wow {
       }
       System.out.println();
     }
+      System.out.println("");
       System.out.println("--------------------------");
 
     
@@ -34,13 +36,20 @@ public class Wow {
     System.out.println(
         "Verwende die Tasten 'W', 'A', 'S' und 'D' um dich zu bewegen, wenn du ein Blick in dein Inventar werfen möchtest, verwende hierzu 'I'.");
     System.out.println("Mit 'Q' verlässt du das Spiel.");
+    System.out.println("Zu Beginn des Spiels, hast du eine Karte erhalten, mit der du dich besser zurecht finden kannst.");
+    System.out.println("'~' stellt das Meer dar.");
+    System.out.println("'$' stellt die Bäume bzw. den Wald dar.");
+    System.out.println("'x' stellt den Weg dar.");
+    System.out.println("'#' stellt die Ruinen von Idris dar.");
+    System.out.println("'?' stellt das unbekannte Gebiet dar, dort solltest du zunächst erstmal nicht hingehen.");
+    System.out.println("Andere Buchstaben & ähnliches sind NPC's mit denen du reden oder kämpfen kannst. Viel Spaß bei deiner Reise!");
     System.out.println("Starte deine Reise mit 'T'");
     System.out.println();
 
   }
 
   public static void main(String[] args) throws IOException {
-    Map map = new Map(3, 3);
+    Map map = new Map(8, 8);
 
     Spielbeginn();
 
@@ -52,8 +61,8 @@ public class Wow {
     Kobold boeserKobold = new Kobold(2, "Böser Kobold", 3, 4);
 
 
-    map.placeElement(2,1, boeserKobold);
-    map.placeElement(2,2, bobby);
+    map.placeElement(6,1, boeserKobold);
+    map.placeElement(2,4, bobby);
     
 
     printMap(map);
