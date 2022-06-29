@@ -90,6 +90,7 @@ public class Wow {
           System.out.println("HALLO HIER IST DAS MEER WILLST DU SCHWIMMEN ODER WAS?!!");
           break;
         }
+        
           x++;
           duSpieler.MoveRight();
           printMap(map);
