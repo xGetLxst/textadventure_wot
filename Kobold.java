@@ -24,6 +24,6 @@ public class Kobold implements MapElement {
         }
 
         public String getSymbol() {
-          return "@";
+          return "ǘ";
         }
 }
