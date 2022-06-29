@@ -122,7 +122,7 @@ public class Map {
         map[8][5] = new MapPosition(new Meer());
         map[8][6] = new MapPosition(new Meer());
         map[8][7] = new MapPosition(new Meer());
-    
+        map[8][8] = new MapPosition(new Meer());
     
         return map;
       }
