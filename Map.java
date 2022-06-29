@@ -10,7 +10,7 @@ public class Map {
   public Map(int maxX, int maxY) {
     this.maxX = maxX;
     this.maxY = maxY;
-    this.positions = createMapSmall();
+    this.positions = createMap();
   }
 
   public int getmaxX() {
@@ -32,29 +32,8 @@ public void setmaxY(int maxY) {
     this.positions[x][y].setElement(mapElement);
   }
 
-
-
   public MapPosition[][] getPositions() {
     return positions;
-  }
-
-  private static MapPosition[][] createMapSmall() {
-    MapPosition[][] map = new MapPosition[3][3];
-    
-
-    map[0][0] = new MapPosition(new Field("weg"));
-    map[0][1] = new MapPosition(new Field("weg"));
-    map[0][2] = new MapPosition(new Field("weg"));
-
-    map[1][0] = new MapPosition(new Field("weg"));
-    map[1][1] = new MapPosition(new Field("weg"));
-    map[1][2] = new MapPosition(new Field("weg"));
-
-    map[2][0] = new MapPosition(new Field("weg"));
-    map[2][1] = new MapPosition(new Field("weg"));
-    map[2][2] = new MapPosition(new Field("weg"));
-
-    return map;
   }
 
   private static MapPosition[][] createMap() {
@@ -116,7 +95,7 @@ public void setmaxY(int maxY) {
     map[4][1] = new MapPosition(new Wald());
     map[4][2] = new MapPosition(new Wald());
     map[4][3] = new MapPosition(new Wald());
-    map[4][4] = new MapPosition(new Wald());
+    map[4][4] = new MapPosition(new Field("Hier ist der Waldweg."));
     map[4][5] = new MapPosition(new Wald());
     map[4][6] = new MapPosition(new Wald());
     map[4][7] = new MapPosition(new Wald());
@@ -125,8 +104,8 @@ public void setmaxY(int maxY) {
     map[5][0] = new MapPosition(new Meer());
     map[5][1] = new MapPosition(new Koboldcave());
     map[5][2] = new MapPosition(new Koboldcave());
-    map[5][3] = new MapPosition(new Wald());
-    map[5][4] = new MapPosition(new Wald());
+    map[5][3] = new MapPosition(new Field("Hier ist der Waldweg."));
+    map[5][4] = new MapPosition(new Field("Hier ist der Waldweg."));
     map[5][5] = new MapPosition(new Wald());
     map[5][6] = new MapPosition(new Ruinen());
     map[5][7] = new MapPosition(new Ruinen());
