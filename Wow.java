@@ -7,8 +7,8 @@ public class Wow {
   private static Spieler duSpieler;
 
   private static void printMap(Map map) {
-    for (int y = 8; y >= 0; y--) {
-      for (int x = 0; x <= 8; x++) {
+    for (int y = 2; y >= 0; y--) {
+      for (int x = 0; x <= 2; x++) {
         System.out.print(map.getPositions()[x][y].getElement().getSymbol());         
       }
       System.out.println();
@@ -41,8 +41,8 @@ public class Wow {
     Kobold boeserKobold = new Kobold(2, "Böser Kobold", 3, 4);
 
     map.placeElement(0,0, duSpieler);
-    map.placeElement(6,1, boeserKobold);
-    map.placeElement(2,4, bobby);
+    map.placeElement(2,1, boeserKobold);
+    map.placeElement(2,2, bobby);
     
 
     printMap(map);
