@@ -7,12 +7,23 @@ public class Wow {
   private static Spieler duSpieler;
 
   private static void printMap(Map map) {
+    System.out.println("--------------------------");
+
     for (int y = 2; y >= 0; y--) {
       for (int x = 0; x <= 2; x++) {
-        System.out.print(map.getPositions()[x][y].getElement().getSymbol());         
+        
+        if(duSpieler.getX() == x && duSpieler.getY() == y) {
+          System.out.print(duSpieler.getSymbol());
+        } else {
+          System.out.print(map.getPositions()[x][y].getElement().getSymbol());
+        }
       }
       System.out.println();
     }
+      System.out.println("--------------------------");
+
+    
+    
   }
 
   
@@ -40,7 +51,7 @@ public class Wow {
     Person bobby = new Person(1, "Bobby", 153, "m");
     Kobold boeserKobold = new Kobold(2, "Böser Kobold", 3, 4);
 
-    map.placeElement(0,0, duSpieler);
+
     map.placeElement(2,1, boeserKobold);
     map.placeElement(2,2, bobby);
     
