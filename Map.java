@@ -40,12 +40,6 @@ public void setmaxY(int maxY) {
 
     MapPosition[][] map = new MapPosition[9][9];
 
-    for (int y = 0; y <= 8; y++) {
-      for (int x = 0; x <= 8; x++) {
-        map[x][y] = new MapPosition(new Field("HALLO HIER IST DAS MEER WILLST DU SCHWIMMEN ODER WAS?!!"));
-      }
-    }
-
     for (int n = 0; n < 8; n++) {
       map[8][n] = new MapPosition(new Field("Hier ist das Meer."));
       map[n][8] = new MapPosition(new Field("Hier ist das Meer."));

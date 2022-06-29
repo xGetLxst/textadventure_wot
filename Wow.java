@@ -75,7 +75,7 @@ public class Wow {
         
       case "w":
           if(y == map.getmaxY() -1){
-            System.out.println("Hier ist der Rand der Insel.");
+            System.out.println("HALLO HIER IST DAS MEER WILLST DU SCHWIMMEN ODER WAS?!!");
             break;
           }
           y++;
@@ -87,7 +87,7 @@ public class Wow {
           break;
         case "d":
         if(x == map.getmaxX() -1){
-          System.out.println("Hier ist der Rand der Insel.");
+          System.out.println("HALLO HIER IST DAS MEER WILLST DU SCHWIMMEN ODER WAS?!!");
           break;
         }
           x++;
@@ -99,7 +99,7 @@ public class Wow {
           break;
         case "s":
         if(y == 0){
-          System.out.println("Hier ist der Rand der Insel.");
+          System.out.println("HALLO HIER IST DAS MEER WILLST DU SCHWIMMEN ODER WAS?!!");
           break;
         }
           y--;
@@ -111,7 +111,7 @@ public class Wow {
           break;
         case "a":
         if(x == 0){
-          System.out.println("Hier ist der Rand der Insel.");
+          System.out.println("HALLO HIER IST DAS MEER WILLST DU SCHWIMMEN ODER WAS?!!");
           break;
         }
           x--;
