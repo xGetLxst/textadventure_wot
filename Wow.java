@@ -8,7 +8,7 @@ public class Wow {
 
   private static void printMap(Map map) {
     System.out.println("--------- KARTE ----------");
-    System.out.println("");
+    System.out.println();
 
     for (int y = 8; y >= 0; y--) {
       for (int x = 0; x <= 8; x++) {
@@ -21,7 +21,7 @@ public class Wow {
       }
       System.out.println();
     }
-      System.out.println("");
+      System.out.println();
       System.out.println("--------------------------");
   }
 
@@ -66,6 +66,10 @@ public class Wow {
         switch (befehln2.toLowerCase()) {
         case "y":
         System.out.println("Danke dir. *Du hast eine Mission erhalten; Töte den Kobold*");
+        System.out.println();
+        System.out.println("*Du gehst weg und plötzlich wirst du von hinten angetippt*");
+        System.out.println("*Du drehst dich um und triffst auf ein junges Mädchen*");
+        System.out.println("Hi, mein name ist Katie, ich hab' eben bei deinem Gespräch mit Bobby zufälliger Weise zugehört und der Kobold hat auch etwas von mir genommen.. Alsooo helfe ich dir, damit du den Kobold so schnell wie möglich los wirst. Es gibt in den alten Ruinen von Idris ein Schwert.. Zumindestens laut Legende, es ist grünfarbig, genauso wie der Kobold! Es wurde geschaffen um den Kobold zu besiegen, vielleicht findest du es ja. Viel Glück Fremder!");
         break;
         case "n":
         System.out.println("Okey, na gut.. Komm wieder wenn du Zeit hast.");
