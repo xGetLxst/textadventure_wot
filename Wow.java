@@ -70,13 +70,10 @@ public class Wow {
         case "n":
         System.out.println("Okey, na gut.. Komm wieder wenn du Zeit hast.");
         break;
-}
-}
-}
+      }
+    }
+  }
   
-
-
-
   public static void main(String[] args) throws IOException {
     Map map = new Map(8, 8);
 
@@ -87,7 +84,7 @@ public class Wow {
 
     duSpieler = new Spieler(0, "Du", 14, 6);
     Person bobby = new Person(1, "Markt", 153, "m");
-    Kobold boeserKobold = new Kobold(2, "Böser Kobold", 3, 4);
+    Kobold boeserKobold = new Kobold(2, "Missionsgebiet: Die Koboldshöhle", 3, 4);
 
 
     map.placeElement(6,1, boeserKobold);
@@ -190,5 +187,4 @@ public class Wow {
       }
     }
   }
-
 }
