@@ -20,7 +20,7 @@ public class Kobold implements MapElement {
         }
         
         public String getDisplayName() {
-            return this.name + ":" + this.strength;
+            return this.name;
         }
 
         public String getSymbol() {
