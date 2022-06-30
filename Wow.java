@@ -170,10 +170,8 @@ public class Wow {
     Person bobby = new Person(1, "Markt", 153, "m");
     Kobold boeserKobold = new Kobold(2, "Missionsgebiet: Die Koboldshöhle", 3, 4);
 
-
     map.placeElement(6,1, boeserKobold);
     map.placeElement(2,4, bobby);
-    
 
     printMap(map);
 

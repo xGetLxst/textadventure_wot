@@ -111,7 +111,6 @@ public void setmaxY(int maxY) {
     map[6][3] = new MapPosition(new Wald());
     map[6][4] = new MapPosition(new Wald());
     map[6][5] = new MapPosition(new Wald());
-    map[6][6] = new MapPosition(new Ruinen());
     map[6][7] = new MapPosition(new Ruinen());
     map[6][8] = new MapPosition(new Meer());
 
