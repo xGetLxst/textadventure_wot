@@ -23,12 +23,7 @@ public class Wow {
     }
       System.out.println("");
       System.out.println("--------------------------");
-
-    
-    
   }
-
-  
 
   private static void Spielbeginn() {
 
@@ -45,7 +40,6 @@ public class Wow {
     System.out.println("Andere Buchstaben & ähnliches sind NPC's mit denen du reden oder kämpfen kannst. Viel Spaß bei deiner Reise!");
     System.out.println("Starte deine Reise mit 'T'");
     System.out.println();
-
   }
 
   public static void main(String[] args) throws IOException {
@@ -90,7 +84,7 @@ public class Wow {
           System.out.println("HALLO HIER IST DAS MEER WILLST DU SCHWIMMEN ODER WAS?!!");
           break;
         }
-        
+
           x++;
           duSpieler.MoveRight();
           printMap(map);
