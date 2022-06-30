@@ -25,7 +25,7 @@ public class Wow {
       System.out.println("--------------------------");
   }
 
-  private static void Spielbeginn() {
+  private static void spielbeginn() {
 
     System.out.println("Hallo" + ", willkommen in der World of Warcraft. Du befindest dich auf der Insel Idris.");
     System.out.println(
@@ -74,10 +74,90 @@ public class Wow {
     }
   }
   
-  public static void main(String[] args) throws IOException {
-    Map map = new Map(8, 8);
+  private static void koboldTreff(int x, int y, int kobX, int kobY) throws IOException{
 
-    Spielbeginn();
+
+    if(x == kobX && y == kobY) {
+      System.out.println("*Du hörst ein fieses Lachen und du siehst einen kleinen Schatten der hin und her springt*");
+      System.out.println("Duu.. du hättest nicht kommen sollen, der alte Mann hat dich wohl geschickt was?");
+      System.out.println("Ach du bist so naiv, hehehe. Willst du mich etwa herausfordern? Y/N");
+    
+      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+      String befehlen = br.readLine();
+      
+        switch (befehlen.toLowerCase()) {
+        case "n":
+        System.out.println("*Als du gehen wolltest, hat dich der Kobold überfallen und du bist gestorben*");
+        System.out.println("Starte deine Reise erneut um den Kobold zu besiegen!");
+        System.exit(0);
+        break;
+        case "y":
+        System.out.println("HAHHAH Dann zeig mal was du kannst, kleiner Bengel");
+        System.out.println("*Der Kobold springt hinter einem Stein hervor und landet vor deinen Füßen*");
+        System.out.println("Was machst du? 1/2");
+        System.out.println("1: Du attackierst ihn");
+        System.out.println("2: Du rennst weg.");
+        break;
+    }
+      String befehlen2 = br.readLine();
+
+        switch (befehlen2.toLowerCase()) {
+        
+        case "2":
+        System.out.println("*Als du rennen wolltest, hat dich der Kobold überfallen und du bist gestorben*");
+        System.out.println("Starte deine Reise erneut um den Kobold zu besiegen!");
+        System.exit(0);
+        break;
+        case "1":
+        System.out.println("*Du hast den Kobold mit deinem Schwert getroffen, er hat seine Hand verloren*");
+        System.out.println("*Er schaut dich mit einem Todesblick an* Dich mache ich kalt!");
+        System.out.println("*Der böse Kobold versucht dich anzugreifen* Was machst du? 1/2");
+        System.out.println("1: Du versuchst seinen Schlag abzuwehren");
+        System.out.println("2: Du startest einen Gegenangriff");
+        break;
+    }
+      String befehlen3 = br.readLine();
+    
+        switch (befehlen3.toLowerCase()) {
+        
+        case "1":
+        System.out.println("*Du konntest den Kobold erfolgreich abwehren, der Kampf geht weiter*");
+        break;
+
+        case "2":
+        System.out.println("*Dein Gegenangriff hat den Kobold enorm geschwächt*");
+        System.out.println("Der Kobold liegt am Boden, du könntest ihn töten. Wirst du ihn verschonen, mit der Bedingung,");
+        System.out.println("dass er die Inselbewohner in Ruhe lässt und ihn alles zurück gibt, oder wirst du ihn töten, damit es endgültig ein Ende gibt? 1/2");
+        System.out.println("1: Du verschonst ihn");
+        System.out.println("2: Du tötest ihn");
+        break;
+    }
+      String befehlen4 = br.readLine();
+        
+      switch(befehlen4.toLowerCase()) {
+      
+      case "1":
+      System.out.println("*Du hast den Kobold verschont & er ist dir sehr Dankbar. Idris veranstaltet eine Feier, um dich zu ehren, dass du sie von ihren Leid befreit hast. Der Kobold wurde zum Freund und hilft den Leuten wo er kann, du hast ihn gerettet. Danke für's Spielen!");
+      System.exit(0);
+      break;
+
+      case "2":
+      System.out.println("Du hast die Insel von ihrem Leid befreit, du bist der Held von Idris und von Generation zu Generation wird von dir erzählt. Idris veranstaltet eine Feier, um dich zu ehren, dass du ihnen Freiheit geschenkt hast. Danke für's Spielen!");
+      System.exit(0);
+      break;
+    }
+      String befehlen5 = br.readLine();
+
+      switch(befehlen5.toLowerCase()) {
+
+    }
+  }  
+}
+  
+  public static void main(String[] args) throws IOException {
+    Map map = new Map(9, 9);
+
+    spielbeginn();
 
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     String befehl;
@@ -111,6 +191,7 @@ public class Wow {
               + "|" + y + ").");
           System.out.println("Feld: " + map.getPositions()[x][y].getElement().getDisplayName());
           missionAnnahme(x, y, 2, 4);
+          koboldTreff(x, y, 6, 1);
           break;
         case "d":
         if(x == map.getmaxX() -1){
@@ -124,6 +205,7 @@ public class Wow {
               + "|" + y + ").");
           System.out.println("Feld: " + map.getPositions()[x][y].getElement().getDisplayName());
           missionAnnahme(x, y, 2, 4);
+          koboldTreff(x, y, 6, 1);
           break;
         case "s":
         if(y == 0){
@@ -137,6 +219,7 @@ public class Wow {
               + "|" + y + ").");
               System.out.println("Feld: " + map.getPositions()[x][y].getElement().getDisplayName());
               missionAnnahme(x, y, 2, 4);
+              koboldTreff(x, y, 6, 1);
               break;
         case "a":
         if(x == 0){
@@ -150,6 +233,7 @@ public class Wow {
               + "|" + y + ").");
           System.out.println("Feld: " + map.getPositions()[x][y].getElement().getDisplayName());
           missionAnnahme(x, y, 2, 4);
+          koboldTreff(x, y, 6, 1);
           break;
         case "q":
           System.out.println("Willst du wirklich aufgeben? Y/N");
