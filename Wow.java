@@ -42,6 +42,41 @@ public class Wow {
     System.out.println();
   }
 
+  private static void missionAnnahme(int x, int y, int bobX, int bobY) throws IOException{
+
+
+    if(x == bobX && y == bobY) {
+      System.out.println("*Es kommt eine Person auf dich zu, die sehr alt aussieht*");
+      System.out.println("Hey du, ich bin Bobby, magst du mir bei etwas helfen? Y/N");
+    
+      BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+      String befehln = br.readLine();
+
+        switch (befehln.toLowerCase()) {
+        case "n":
+        System.out.println("Okey, na gut.. Komm wieder wenn du Zeit hast.");
+        break;
+        case "y":
+        System.out.println("Du bist aber nett, du siehst so Mutig und stark aus.. Magst du den Kobold für mich töten? Ich bin viel zu alt ");
+        System.out.println("und er hat mir meinen Rollstuhl geklaut :(. Y/N");
+        break;
+  }
+    String befehln2 = br.readLine();
+
+        switch (befehln2.toLowerCase()) {
+        case "y":
+        System.out.println("Danke dir. *Du hast eine Mission erhalten; Töte den Kobold*");
+        break;
+        case "n":
+        System.out.println("Okey, na gut.. Komm wieder wenn du Zeit hast.");
+        break;
+}
+}
+}
+  
+
+
+
   public static void main(String[] args) throws IOException {
     Map map = new Map(8, 8);
 
@@ -51,7 +86,7 @@ public class Wow {
     String befehl;
 
     duSpieler = new Spieler(0, "Du", 14, 6);
-    Person bobby = new Person(1, "Bobby", 153, "m");
+    Person bobby = new Person(1, "Markt", 153, "m");
     Kobold boeserKobold = new Kobold(2, "Böser Kobold", 3, 4);
 
 
@@ -78,19 +113,20 @@ public class Wow {
           System.out.println("*Du hast einen Schritt in Richtung Norden gemacht* " + "Ich befinde mich jetzt bei P(" + x
               + "|" + y + ").");
           System.out.println("Feld: " + map.getPositions()[x][y].getElement().getDisplayName());
+          missionAnnahme(x, y, 2, 4);
           break;
         case "d":
         if(x == map.getmaxX() -1){
           System.out.println("HALLO HIER IST DAS MEER WILLST DU SCHWIMMEN ODER WAS?!!");
           break;
         }
-
           x++;
           duSpieler.MoveRight();
           printMap(map);
           System.out.println("*Du hast einen Schritt in Richtung Osten gemacht* " + "Ich befinde mich jetzt bei P(" + x
               + "|" + y + ").");
           System.out.println("Feld: " + map.getPositions()[x][y].getElement().getDisplayName());
+          missionAnnahme(x, y, 2, 4);
           break;
         case "s":
         if(y == 0){
@@ -102,8 +138,9 @@ public class Wow {
           printMap(map);
           System.out.println("*Du hast einen Schritt in Richtung Süden gemacht* " + "Ich befinde mich jetzt bei P(" + x
               + "|" + y + ").");
-          System.out.println("Feld: " + map.getPositions()[x][y].getElement().getDisplayName());
-          break;
+              System.out.println("Feld: " + map.getPositions()[x][y].getElement().getDisplayName());
+              missionAnnahme(x, y, 2, 4);
+              break;
         case "a":
         if(x == 0){
           System.out.println("HALLO HIER IST DAS MEER WILLST DU SCHWIMMEN ODER WAS?!!");
@@ -115,6 +152,7 @@ public class Wow {
           System.out.println("*Du hast einen Schritt in Richtung Westen gemacht* " + "Ich befinde mich jetzt bei P(" + x
               + "|" + y + ").");
           System.out.println("Feld: " + map.getPositions()[x][y].getElement().getDisplayName());
+          missionAnnahme(x, y, 2, 4);
           break;
         case "q":
           System.out.println("Willst du wirklich aufgeben? Y/N");

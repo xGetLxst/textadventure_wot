@@ -1,3 +1,5 @@
+import javax.lang.model.type.NullType;
+
 public class Person implements MapElement {
 
     private int id;
@@ -7,6 +9,10 @@ public class Person implements MapElement {
     private int age;
 
     private String gender; 
+
+    private int x;
+
+    private int y;
 
     public Person(int id, String name, int age, String gender) {
         this.id = id;
@@ -20,10 +26,21 @@ public class Person implements MapElement {
     }
     
     public String getDisplayName() {
-        return this.name + ":" + this.gender;
+        return this.name;
     }
     
     public String getSymbol() {
         return "B";
     }
+
+    public int getX() {
+        return this.x;
+    }
+
+    public int getY() {
+        return this.y;
+    }
+
+
+
 }
