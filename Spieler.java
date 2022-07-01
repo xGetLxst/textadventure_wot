@@ -45,11 +45,11 @@ public class Spieler implements MapElement {
     }
 
     public String getDisplayName() {
-        return this.name + ":" + this.strength;
+        return this.name;
     }
 
     public String getSymbol() {
-        return "P";
+        return "⍢";
     }
 
     public int getX() {
