@@ -1,12 +1,6 @@
 public class Spieler implements MapElement {
 
-    private int id;
-
     private String name;
-
-    private int age;
-
-    private int strength;
 
     private int x;
 
@@ -14,11 +8,8 @@ public class Spieler implements MapElement {
 
     private MapElement waffe1;
 
-    public Spieler(int id, String name, int age, int strength) {
-        this.id = id;
+    public Spieler(String name) {
         this.name = name;
-        this.age = age;
-        this.strength = strength;
         this.x = 0;
         this.y = 0;
     }

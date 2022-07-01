@@ -1,22 +1,13 @@
 public class Person implements MapElement {
 
-    private int id;
-
     private String name;
-
-    private int age;
-
-    private String gender; 
 
     private int x;
 
     private int y;
 
-    public Person(int id, String name, int age, String gender) {
-        this.id = id;
+    public Person(String name) {
         this.name = name;
-        this.age = age;
-        this.gender = gender;
     }
 
     public String getName(){

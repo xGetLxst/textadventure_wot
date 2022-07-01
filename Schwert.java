@@ -1,15 +1,12 @@
 public class Schwert implements MapElement {
 
-    private int id;
-
     private String name;
 
     private int x;
 
     private int y;
 
-    public Schwert(int id, String name) {
-        this.id = id;
+    public Schwert( String name) {
         this.name = name;
     }
 
