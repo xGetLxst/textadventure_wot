@@ -5,8 +5,4 @@ public class Wald implements MapElement {
     public String getSymbol() {
         return "$";
       }
-
-
-
-
 }

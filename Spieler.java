@@ -67,5 +67,4 @@ public class Spieler implements MapElement {
     public void setWaffe1(MapElement schwert) {
         this.waffe1 = schwert;
     }
-
 }

@@ -5,8 +5,4 @@ public class Ruinen implements MapElement {
     public String getSymbol() {
         return "#";
       }
-
-
-
-
 }

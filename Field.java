@@ -1,6 +1,5 @@
 public class Field implements MapElement {
-
-
+    
     private String displayName;
 
     public Field(String displayName) {
