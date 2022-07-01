@@ -1,5 +1,3 @@
-import javax.lang.model.type.NullType;
-
 public class Person implements MapElement {
 
     private int id;
@@ -40,7 +38,4 @@ public class Person implements MapElement {
     public int getY() {
         return this.y;
     }
-
-
-
 }
