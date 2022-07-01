@@ -15,15 +15,15 @@ public class Wot {
         
         if(duSpieler.getX() == x && duSpieler.getY() == y) {
           System.out.print(duSpieler.getSymbol());
-        } else {
+}         else {
           System.out.print(map.getPositions()[x][y].getElement().getSymbol());
-        }
-      }
-      System.out.println();
+}
     }
       System.out.println();
-      System.out.println("--------------------------");
   }
+      System.out.println();
+      System.out.println("--------------------------");
+}
 
   private static void spielbeginn() {
 
@@ -40,7 +40,7 @@ public class Wot {
     System.out.println("Andere Buchstaben & ähnliches sind NPC's mit denen du reden oder kämpfen kannst. Viel Spaß bei deiner Reise!");
     System.out.println("Starte deine Reise mit 'T'");
     System.out.println();
-  }
+}
 
   private static void missionAnnahme(int x, int y, int bobX, int bobY) throws IOException{
 
@@ -60,7 +60,7 @@ public class Wot {
         System.out.println("Du bist aber nett, du siehst so Mutig und stark aus.. Magst du den Kobold für mich töten? Ich bin viel zu alt ");
         System.out.println("und er hat mir meinen Rollstuhl geklaut :(. Y/N");
         break;
-  }
+    }
     String befehln2 = br.readLine();
 
         switch (befehln2.toLowerCase()) {
@@ -74,9 +74,9 @@ public class Wot {
         case "n":
         System.out.println("Okey, na gut.. Komm wieder wenn du Zeit hast.");
         break;
-      }
     }
   }
+}
 
   private static void schwertAufnahme(int x, int y, int swX, int swY, Map map) throws IOException{
 
@@ -84,8 +84,8 @@ public class Wot {
       MapElement schwert = map.getPositions()[swX][swY].getElement();
       duSpieler.setWaffe1(schwert);
       System.out.println("*Dir wird leicht Schwindelig, du merkst hier ist etwas anders. Du schaust dich um und findest eine alte Truhe, du gehst hin um sie zu öffnen und erhälst folgendes: Das Koboldi-Schwert*");
-    }
   }
+}
 
   private static void koboldTreff(int x, int y, int kobX, int kobY) throws IOException{
 
@@ -128,10 +128,10 @@ public class Wot {
         System.out.println("*Der böse Kobold versucht dich anzugreifen* Was machst du? 1/2");
         System.out.println("1: Du versuchst seinen Schlag abzuwehren");
         System.out.println("2: Du startest einen Gegenangriff");
-        } else {
+} else {
           System.out.println("Da du nur einen Knüppel hattest, wurdest du gnadenlos vom Kobold fertig gemacht. Starte das Spiel neu, um den Kobold zu besiegen.");
           System.exit(0);
-        }
+}
         break;
     }
       String befehlen3 = br.readLine();
@@ -155,10 +155,8 @@ public class Wot {
           System.out.println("*Du hast deinen Heldenhieb erfolgreich ausgeführt* Der Kobold wurde besiegt, die Insel wurde gerettet. Idris feiert eine riesen Veranstaltung und du bist der Held, über den alle berichten. Generationen werden von dir schwärmen. Danke für's spielen!");
           System.exit(0);
           break;
-
-        }
-        break;
-
+}
+          break;
         case "2":
         System.out.println("*Dein Gegenangriff hat den Kobold enorm geschwächt*");
         System.out.println("Der Kobold liegt am Boden, du könntest ihn töten. Wirst du ihn verschonen, mit der Bedingung,");
@@ -218,7 +216,7 @@ public class Wot {
           if(y == map.getmaxY() -1){
             System.out.println("HALLO HIER IST DAS MEER WILLST DU SCHWIMMEN ODER WAS?!!");
             break;
-          }
+}
           y++;
           duSpieler.MoveUp();
           printMap(map);
@@ -233,7 +231,7 @@ public class Wot {
         if(x == map.getmaxX() -1){
           System.out.println("HALLO HIER IST DAS MEER WILLST DU SCHWIMMEN ODER WAS?!!");
           break;
-        }
+}
           x++;
           duSpieler.MoveRight();
           printMap(map);
@@ -248,7 +246,7 @@ public class Wot {
         if(y == 0){
           System.out.println("HALLO HIER IST DAS MEER WILLST DU SCHWIMMEN ODER WAS?!!");
           break;
-        }
+}
           y--;
           duSpieler.MoveDown();
           printMap(map);
@@ -263,7 +261,7 @@ public class Wot {
         if(x == 0){
           System.out.println("HALLO HIER IST DAS MEER WILLST DU SCHWIMMEN ODER WAS?!!");
           break;
-        }
+}
           x--;
           duSpieler.MoveLeft();
           printMap(map);
@@ -285,7 +283,7 @@ public class Wot {
             case "n":
               System.out.println("Weiter geht die Reise!");
               break;
-          }
+}
 
         case "t":
           System.out.println("Hast du die Steuerung verstanden? Verwende Y zum bestätigen.");
@@ -295,25 +293,24 @@ public class Wot {
               System.out.println("Okey! " + "Bewege dich zum Markt, um deine erste Mission zu erhalten. "
                   + "Der Markt befindet sich bei den Koordinaten P(2|3).");
               break;
-          }
+}
           break;
         case "":
           System.out.println("Du schläfst gleich ein, bewege dich, um deine Reise fortzusetzen.");
           break;
+          
         case "i":
-        
               if(duSpieler.getWaffe1() != null) {
               System.out.println("Du besitzt ein " + duSpieler.getWaffe1().getDisplayName() + ".");
-              } else {
+}             else {
                 System.out.println(
                   "Du bist noch am Anfang des Spiels, deshalb befindet sich in deinem Rucksack nur ein einziger Gegenstand; ein Knüppel.");
-              }
-
+}
               break;
         default:
           System.err.println("Mach keinen Unsinn! Du fällst noch hin..");
 
-      }
     }
   }
 }
+    }
