@@ -32,6 +32,7 @@ public class Wot {
         "Verwende die Tasten 'W', 'A', 'S' und 'D' um dich zu bewegen, wenn du ein Blick in dein Rucksack werfen möchtest, verwende hierzu 'I'.");
     System.out.println("Mit 'Q' verlässt du das Spiel.");
     System.out.println("Zu Beginn des Spiels, hast du eine Karte erhalten, mit der du dich besser zurecht finden kannst.");
+    System.out.println("'⍢' bist du, wenn du dich bewegst, kannst du auf der Karte verfolgen wo du jetzt stehst.");
     System.out.println("'~' stellt das Meer dar.");
     System.out.println("'$' stellt die Bäume bzw. den Wald dar.");
     System.out.println("'=' stellt den Weg dar.");
@@ -58,7 +59,7 @@ public class Wot {
         break;
         case "y":
         System.out.println("Du bist aber nett, du siehst so Mutig und stark aus.. Magst du den Kobold für mich töten? Ich bin viel zu alt ");
-        System.out.println("und er hat mir meinen Rollstuhl geklaut :(. Y/N");
+        System.out.println("und er hat mir meine Brille geklaut. Seit dem sehe ich sehr schlecht. Y/N");
         break;
     }
     String befehln2 = br.readLine();
