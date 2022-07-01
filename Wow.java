@@ -186,9 +186,11 @@ public class Wow {
     duSpieler = new Spieler(0, "Du", 14, 6);
     Person bobby = new Person(1, "Markt", 153, "m");
     Kobold boeserKobold = new Kobold(2, "Missionsgebiet: Die Koboldshöhle", 3, 4);
+    Schwert schwert = new Schwert (3 ,"Koboldischwert");
 
     map.placeElement(6,1, boeserKobold);
     map.placeElement(2,4, bobby);
+    map.placeElement(6,6, schwert);
 
     printMap(map);
 
