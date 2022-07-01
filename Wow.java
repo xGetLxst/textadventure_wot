@@ -78,10 +78,12 @@ public class Wow {
     }
   }
 
-  private static void schwertAufnahme(int x, int y, int swX, int swY) throws IOException{
+  private static void schwertAufnahme(int x, int y, int swX, int swY, Map map) throws IOException{
 
     if(x == swX && y == swY) {
-      System.out.println("*Dir wird leicht Schwindelig, du merkst hier ist etwas anders. Du schaust dich um und findest eine alte Truhe, du gehst hin um sie zu öffnen und erhälst folgendes: Das Koboldischwert*");
+      MapElement schwert = map.getPositions()[swX][swY].getElement();
+      duSpieler.setWaffe1(schwert);
+      System.out.println("*Dir wird leicht Schwindelig, du merkst hier ist etwas anders. Du schaust dich um und findest eine alte Truhe, du gehst hin um sie zu öffnen und erhälst folgendes: Das Koboldi-Schwert*");
     }
   }
 
@@ -192,7 +194,7 @@ public class Wow {
     duSpieler = new Spieler(0, "Du", 14, 6);
     Person bobby = new Person(1, "Markt", 153, "m");
     Kobold boeserKobold = new Kobold(2, "Missionsgebiet: Die Koboldshöhle", 3, 4);
-    Schwert schwert = new Schwert (3 ,"Hier sieht es gruselig aus.. Hier sind die Ruinen.");
+    Schwert schwert = new Schwert (3 ,"Koboldi-Schwert");
 
     map.placeElement(6,1, boeserKobold);
     map.placeElement(2,4, bobby);
@@ -219,7 +221,7 @@ public class Wow {
           System.out.println("Feld: " + map.getPositions()[x][y].getElement().getDisplayName());
           missionAnnahme(x, y, 2, 4);
           koboldTreff(x, y, 6, 1);
-          schwertAufnahme(x, y, 6, 6);
+          schwertAufnahme(x, y, 6, 6, map);
           break;
         case "d":
         if(x == map.getmaxX() -1){
@@ -234,7 +236,7 @@ public class Wow {
           System.out.println("Feld: " + map.getPositions()[x][y].getElement().getDisplayName());
           missionAnnahme(x, y, 2, 4);
           koboldTreff(x, y, 6, 1);
-          schwertAufnahme(x, y, 6, 6);
+          schwertAufnahme(x, y, 6, 6, map);
           break;
         case "s":
         if(y == 0){
@@ -249,7 +251,7 @@ public class Wow {
               System.out.println("Feld: " + map.getPositions()[x][y].getElement().getDisplayName());
               missionAnnahme(x, y, 2, 4);
               koboldTreff(x, y, 6, 1);
-              schwertAufnahme(x, y, 6, 6);
+              schwertAufnahme(x, y, 6, 6, map);
               break;
         case "a":
         if(x == 0){
@@ -264,7 +266,7 @@ public class Wow {
           System.out.println("Feld: " + map.getPositions()[x][y].getElement().getDisplayName());
           missionAnnahme(x, y, 2, 4);
           koboldTreff(x, y, 6, 1);
-          schwertAufnahme(x, y, 6, 6);
+          schwertAufnahme(x, y, 6, 6, map);
           break;
         case "q":
           System.out.println("Willst du wirklich aufgeben? Y/N");
@@ -293,9 +295,15 @@ public class Wow {
           System.out.println("Du schläfst gleich ein, bewege dich, um deine Reise fortzusetzen.");
           break;
         case "i":
-          System.out.println(
-              "Du bist noch am Anfang des Spiels, deshalb befindet sich in deinem Rucksack nur ein einziger Gegenstand; ein Knüppel.");
-          break;
+        
+              if(duSpieler.getWaffe1() != null) {
+              System.out.println("Du besitzt ein " + duSpieler.getWaffe1().getDisplayName() + ".");
+              } else {
+                System.out.println(
+                  "Du bist noch am Anfang des Spiels, deshalb befindet sich in deinem Rucksack nur ein einziger Gegenstand; ein Knüppel.");
+              }
+
+              break;
         default:
           System.err.println("Mach keinen Unsinn! Du fällst noch hin..");
 
