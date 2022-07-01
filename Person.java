@@ -28,7 +28,7 @@ public class Person implements MapElement {
     }
     
     public String getSymbol() {
-        return "B";
+        return "⍨";
     }
 
     public int getX() {

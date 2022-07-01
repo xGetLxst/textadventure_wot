@@ -22,7 +22,7 @@ public class Schwert implements MapElement {
     }
 
     public String getSymbol() {
-        return "#";
+        return "†";
     }
 
     public int getX() {

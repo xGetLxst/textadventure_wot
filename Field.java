@@ -11,6 +11,6 @@ public class Field implements MapElement {
     }
     
     public String getSymbol() {
-        return "x";
+        return "=";
     }
 }

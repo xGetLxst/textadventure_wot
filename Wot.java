@@ -34,10 +34,10 @@ public class Wot {
     System.out.println("Zu Beginn des Spiels, hast du eine Karte erhalten, mit der du dich besser zurecht finden kannst.");
     System.out.println("'~' stellt das Meer dar.");
     System.out.println("'$' stellt die Bäume bzw. den Wald dar.");
-    System.out.println("'x' stellt den Weg dar.");
-    System.out.println("'#' stellt die Ruinen von Idris dar.");
+    System.out.println("'=' stellt den Weg dar.");
+    System.out.println("'†' stellt die Ruinen von Idris dar.");
     System.out.println("'?' stellt das unbekannte Gebiet dar, dort solltest du zunächst erstmal nicht hingehen.");
-    System.out.println("Andere Buchstaben & ähnliches sind NPC's mit denen du reden oder kämpfen kannst. Viel Spaß bei deiner Reise!");
+    System.out.println("Andere Zeichen sind NPC's mit denen du reden oder kämpfen kannst. Viel Spaß bei deiner Reise!");
     System.out.println("Starte deine Reise mit 'T'");
     System.out.println();
 }

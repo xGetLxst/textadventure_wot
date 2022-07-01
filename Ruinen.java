@@ -3,6 +3,6 @@ public class Ruinen implements MapElement {
     return "Hier sieht es gruselig aus.. Hier sind die Ruinen.";
 }
     public String getSymbol() {
-        return "#";
+        return "†";
       }
 }
