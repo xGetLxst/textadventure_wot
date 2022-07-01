@@ -77,9 +77,15 @@ public class Wow {
       }
     }
   }
-  
-  private static void koboldTreff(int x, int y, int kobX, int kobY) throws IOException{
 
+  private static void schwertAufnahme(int x, int y, int swX, int swY) throws IOException{
+
+    if(x == swX && y == swY) {
+      System.out.println("*Dir wird leicht Schwindelig, du merkst hier ist etwas anders. Du schaust dich um und findest eine alte Truhe, du gehst hin um sie zu öffnen und erhälst folgendes: Das Koboldischwert*");
+    }
+  }
+
+  private static void koboldTreff(int x, int y, int kobX, int kobY) throws IOException{
 
     if(x == kobX && y == kobY) {
       System.out.println("*Du hörst ein fieses Lachen und du siehst einen kleinen Schatten der hin und her springt*");
@@ -186,7 +192,7 @@ public class Wow {
     duSpieler = new Spieler(0, "Du", 14, 6);
     Person bobby = new Person(1, "Markt", 153, "m");
     Kobold boeserKobold = new Kobold(2, "Missionsgebiet: Die Koboldshöhle", 3, 4);
-    Schwert schwert = new Schwert (3 ,"Koboldischwert");
+    Schwert schwert = new Schwert (3 ,"Hier sieht es gruselig aus.. Hier sind die Ruinen.");
 
     map.placeElement(6,1, boeserKobold);
     map.placeElement(2,4, bobby);
@@ -213,6 +219,7 @@ public class Wow {
           System.out.println("Feld: " + map.getPositions()[x][y].getElement().getDisplayName());
           missionAnnahme(x, y, 2, 4);
           koboldTreff(x, y, 6, 1);
+          schwertAufnahme(x, y, 6, 6);
           break;
         case "d":
         if(x == map.getmaxX() -1){
@@ -227,6 +234,7 @@ public class Wow {
           System.out.println("Feld: " + map.getPositions()[x][y].getElement().getDisplayName());
           missionAnnahme(x, y, 2, 4);
           koboldTreff(x, y, 6, 1);
+          schwertAufnahme(x, y, 6, 6);
           break;
         case "s":
         if(y == 0){
@@ -241,6 +249,7 @@ public class Wow {
               System.out.println("Feld: " + map.getPositions()[x][y].getElement().getDisplayName());
               missionAnnahme(x, y, 2, 4);
               koboldTreff(x, y, 6, 1);
+              schwertAufnahme(x, y, 6, 6);
               break;
         case "a":
         if(x == 0){
@@ -255,6 +264,7 @@ public class Wow {
           System.out.println("Feld: " + map.getPositions()[x][y].getElement().getDisplayName());
           missionAnnahme(x, y, 2, 4);
           koboldTreff(x, y, 6, 1);
+          schwertAufnahme(x, y, 6, 6);
           break;
         case "q":
           System.out.println("Willst du wirklich aufgeben? Y/N");
