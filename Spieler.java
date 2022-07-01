@@ -12,6 +12,8 @@ public class Spieler implements MapElement {
 
     private int y;
 
+    private MapElement waffe1;
+
     public Spieler(int id, String name, int age, int strength) {
         this.id = id;
         this.name = name;
@@ -57,4 +59,13 @@ public class Spieler implements MapElement {
     public int getY() {
         return this.y;
     }
+
+    public MapElement getWaffe1() {
+        return this.waffe1;
+    }
+
+    public void setWaffe1(MapElement schwert) {
+        this.waffe1 = schwert;
+    }
+
 }
