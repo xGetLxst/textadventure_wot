@@ -292,7 +292,7 @@ public class Wot {
           switch (bestaetigung2.toLowerCase()) {
             case "y":
               System.out.println("Okey! " + "Bewege dich zum Markt, um deine erste Mission zu erhalten. "
-                  + "Der Markt befindet sich bei den Koordinaten P(2|3).");
+                  + "Der Markt befindet sich bei den Koordinaten P(2|4).");
               break;
 }
           break;
