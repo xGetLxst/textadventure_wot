@@ -121,11 +121,17 @@ public class Wow {
         System.exit(0);
         break;
         case "1":
+
+        if(duSpieler.getWaffe1() != null) {
         System.out.println("*Du hast den Kobold mit deinem Schwert getroffen, er hat seine Hand verloren*");
         System.out.println("*Er schaut dich mit einem Todesblick an* Dich mache ich kalt!");
         System.out.println("*Der böse Kobold versucht dich anzugreifen* Was machst du? 1/2");
         System.out.println("1: Du versuchst seinen Schlag abzuwehren");
         System.out.println("2: Du startest einen Gegenangriff");
+        } else {
+          System.out.println("Da du nur einen Knüppel hattest, wurdest du gnadenlos vom Kobold fertig gemacht. Starte das Spiel neu, um den Kobold zu besiegen.");
+          System.exit(0);
+        }
         break;
     }
       String befehlen3 = br.readLine();
