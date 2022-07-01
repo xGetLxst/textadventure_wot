@@ -29,7 +29,7 @@ public class Wow {
 
     System.out.println("Hallo" + ", willkommen in der World of Warcraft. Du befindest dich auf der Insel Idris.");
     System.out.println(
-        "Verwende die Tasten 'W', 'A', 'S' und 'D' um dich zu bewegen, wenn du ein Blick in dein Inventar werfen möchtest, verwende hierzu 'I'.");
+        "Verwende die Tasten 'W', 'A', 'S' und 'D' um dich zu bewegen, wenn du ein Blick in dein Rucksack werfen möchtest, verwende hierzu 'I'.");
     System.out.println("Mit 'Q' verlässt du das Spiel.");
     System.out.println("Zu Beginn des Spiels, hast du eine Karte erhalten, mit der du dich besser zurecht finden kannst.");
     System.out.println("'~' stellt das Meer dar.");
@@ -125,7 +125,24 @@ public class Wow {
         switch (befehlen3.toLowerCase()) {
         
         case "1":
-        System.out.println("*Du konntest den Kobold erfolgreich abwehren, der Kampf geht weiter*");
+        System.out.println("*Du konntest den Kobold erfolgreich abwehren, der Kampf geht weiter* Was machst du? 3/4");
+        System.out.println("'Tackle' (3): Du führst einen Fußkick aus und schwingst danach dein Schwert um den Kampf ein Ende zu setzen");
+        System.out.println("'Heldenhieb' (4): Du springst in Richtung Kobold und führst dein Schwert über deinem Kopf und schlägst auf den Kobold ein");
+
+        String befehlen5 = br.readLine();
+
+        switch(befehlen5.toLowerCase()) {
+          case "3":
+          System.out.println("*Du hast deinen Tackle erfolgreich ausgeführt* Der Kobold liegt am Boden, die Insel wurde gerettet. Idris feiert eine riesen Veranstaltung und du bist der Held, über den alle berichten. Generationen werden von dir schwärmen. Danke für's spielen!");
+          System.exit(0);
+          break;
+
+          case "4":
+          System.out.println("*Du hast deinen Heldenhieb erfolgreich ausgeführt* Der Kobold wurde besiegt, die Insel wurde gerettet. Idris feiert eine riesen Veranstaltung und du bist der Held, über den alle berichten. Generationen werden von dir schwärmen. Danke für's spielen!");
+          System.exit(0);
+          break;
+
+        }
         break;
 
         case "2":
@@ -265,7 +282,7 @@ public class Wow {
           break;
         case "i":
           System.out.println(
-              "Du bist noch am Anfang des Spiels, deshalb befindet sich in deinem Inventar nur ein einziger Gegenstand; ein Holzschwert.");
+              "Du bist noch am Anfang des Spiels, deshalb befindet sich in deinem Rucksack nur ein einziger Gegenstand; ein Knüppel.");
           break;
         default:
           System.err.println("Mach keinen Unsinn! Du fällst noch hin..");
