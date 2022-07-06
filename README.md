@@ -5,5 +5,5 @@ Java
 javac *.java
 
 ## Start:
-java Wot.java
+java Wot
 
